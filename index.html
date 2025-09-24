@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Tâches</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestionnaire de Tâches</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher une tâche...">
+            </div>
+        </header>
+
+        <div class="filters">
+            <div class="form-group">
+                <label for="priorityFilter">Filtrer par priorité :</label>
+                <select id="priorityFilter">
+                    <option value="all">Toutes les priorités</option>
+                    <option value="high">Haute</option>
+                    <option value="medium">Moyenne</option>
+                    <option value="low">Basse</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="statusFilter">Filtrer par statut :</label>
+                <select id="statusFilter">
+                    <option value="all">Tous les statuts</option>
+                    <option value="completed">Terminé</option>
+                    <option value="pending">En cours</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dateFilter">Filtrer par date d'échéance :</label>
+                <input type="date" id="dateFilter">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Ajouter une nouvelle tâche</h2>
+            <div class="task-form">
+                <div class="form-group">
+                    <label for="taskTitle">Titre de la tâche :</label>
+                    <input type="text" id="taskTitle" placeholder="Entrez le titre de votre tâche">
+                </div>
+            <div class="form-group">
+                <label for="taskPriority">Niveau de priorité :</label>
+                <select id="taskPriority">
+                    <option value="high">Haute</option>
+                    <option value="medium">Moyenne</option>
+                    <option value="low">Basse</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="taskDueDate">Date d'échéance :</label>
+                <input type="date" id="taskDueDate">
+            </div>
+            <button id="addTask">Ajouter la tâche</button>
+        </div>
+
+        <div id="tasksList" class="tasks-container">
+            <!-- Les tâches seront ajoutées ici dynamiquement -->
+        </div>
+    </div>
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
